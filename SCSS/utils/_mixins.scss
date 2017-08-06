@@ -1,0 +1,27 @@
+@mixin borderRadius
+{
+  
+        border-radius: $border;
+        border-style: none;
+        padding: 1em;     
+}
+    @mixin backgroundColorRepeats 
+    {
+        background-color:$primary-color;
+
+    }
+
+@mixin articleStyle
+{
+@extend %imageSize;
+        #movieTitle
+        {
+           color:$secondary-color; 
+        }
+        #movieYear{
+            color: $neutral;
+
+        }
+    
+}
+

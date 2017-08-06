@@ -1,0 +1,9 @@
+//Creating imports for utilities
+@import 'utils/mixins';
+@import 'utils/vars';
+@import 'utils/placeholders';
+//creating imports for base
+@import 'base/base';
+//creating import for layout
+@import 'layout/footer';
+@import 'layout/navigation';

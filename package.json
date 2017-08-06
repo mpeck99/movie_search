@@ -1,0 +1,23 @@
+{
+  "name": "movie_search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://mpeck9@bitbucket.org/mpeck9/dws2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/mpeck9/dws2#readme",
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "nodes": "^0.1.0"
+  },
+  "devDependencies": {
+    "gulp-sass": "^3.1.0"
+  }
+}
