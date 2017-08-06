@@ -78,12 +78,15 @@ h3 {
   width: auto;
   margin: 10px auto; }
   #searchInfo .inline-group {
-    margin-left: 500px;
-    display: inline; }
+    margin-left: 500px; }
     #searchInfo .inline-group #searchButton {
       width: 30px;
       height: 32px;
       margin-right: 380px; }
+
+#searchInfo h3 {
+  margin-left: 500px;
+  margin-bottom: 0px; }
 
 #movie {
   margin: 0px auto;
