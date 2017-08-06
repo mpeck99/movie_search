@@ -8,8 +8,7 @@ html, body{
     p
     {
         font-family: $font-stack-p;
-    }
-    
+    }   
 }
 #aboutInformation
 {
@@ -32,7 +31,6 @@ html, body{
 }
 #container
 {
-
     min-height:100%;
     width: 100%
 }
@@ -56,9 +54,7 @@ header
 #navigation
 {
     float: right;
-    margin: 20px;
-
-    
+    margin: 20px;    
     a
     {
     
@@ -66,18 +62,17 @@ header
           text-decoration: none;
           margin: 10px;
           font-family: $font-stack-title;
-    }
-      
-    
+    }    
 }
 a:link, a:visited
 {
     color: $secondary-color;
 }
 
-#Logo
+#Logo 
 {
-    margin-left: 20px;
+    
+    margin: 20px;
 }h1
     {
        font-family: $font-stack-title;
@@ -113,7 +108,6 @@ h3
     margin-left: 500px;
     margin-bottom: 0px;
 }
-
 #movie
 {
 //clear: right;
@@ -188,31 +182,23 @@ p{
   #footerInfo
 {
   
-        margin: 0px auto;
+        margin: 20px auto;
         width:15em;
-        margin: 10px auto;
         text-align: center;
         color: $secondary-color;
         background-color: $primary-color;
 }
-
-
 #moreButton
 { 
 @include borderRadius;
     @extend #footerInfo;
 
-
+text-decoration: none;
 clear: both;
 display: block;
-    //use of extend 
-//font:
-//{
- //   text-align: center;
- width: 15em;
-
+ width: 10em;
 margin: 25px auto;
-    font-weight: 900;
+font-weight: 900;
 
 
 

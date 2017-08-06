@@ -60,7 +60,7 @@ a:link, a:visited {
   color: #01d277; }
 
 #Logo {
-  margin-left: 20px; }
+  margin: 20px; }
 
 h1 {
   font-family: "PT Sands", sans-serif;
@@ -141,9 +141,8 @@ p, #data {
   margin-bottom: 10px; }
 
 #footerInfo, #moreButton {
-  margin: 0px auto;
+  margin: 20px auto;
   width: 15em;
-  margin: 10px auto;
   text-align: center;
   color: #01d277;
   background-color: #081c24; }
@@ -152,8 +151,9 @@ p, #data {
   border-radius: 10px;
   border-style: none;
   padding: 1em;
+  text-decoration: none;
   clear: both;
   display: block;
-  width: 15em;
+  width: 10em;
   margin: 25px auto;
   font-weight: 900; }
