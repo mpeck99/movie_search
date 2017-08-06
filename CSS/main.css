@@ -18,13 +18,13 @@ html, body {
   html p, html #data, body p, body #data {
     font-family: "Roboto", sans-serif; }
 
-#aboutInformation {
+#aboutInformation, #connectForm {
   width: 200px;
   margin: 10px auto; }
-  #aboutInformation h2 {
+  #aboutInformation h2, #connectForm h2 {
     font-family: "PT Sands", sans-serif;
     color: #01d277; }
-  #aboutInformation p, #aboutInformation #data {
+  #aboutInformation p, #connectForm p, #aboutInformation #data, #connectForm #data {
     font-family: "Roboto", sans-serif;
     color: #081c24; }
 

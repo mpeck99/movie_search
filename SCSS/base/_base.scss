@@ -26,6 +26,10 @@ html, body{
         color: $primary-color;
     }
 }
+#connectForm
+{
+    @extend #aboutInformation;
+}
 #container
 {
 
