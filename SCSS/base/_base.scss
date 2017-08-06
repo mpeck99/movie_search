@@ -43,11 +43,10 @@ header
     background-size: cover;
     
 }
-#resultsHeader
+#resultsHeader 
 {
     @include backgroundColorRepeats;
     color: $neutral; 
-    margin: 10px;
     padding: 10px;
     display: inline;
 }
@@ -133,7 +132,7 @@ table
 }
 tr
 {
-vertical-align: top;
+    vertical-align: top;
     display:inline-block;
 }
    
