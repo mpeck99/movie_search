@@ -3,7 +3,7 @@ html, body{
     margin:0;
 	padding:0;
    height: auto;
-
+    display: block;
     font-family: $font-stack-title;
     p
     {
@@ -93,19 +93,23 @@ h3
     color: $neutral;
     width: 280px;
 }
-#movies
+#searchInfo
 {
-    overflow: auto;
+    width: auto;
+    margin: 10px auto; 
+    .inline-group
+    {
+        margin-left: 500px;
+        display: inline;
+        #searchButton
+        {
+            width: 30px;
+            height: 32px;
+            margin-right: 380px;
+        }
+    }
 }
-.inline-group
-{
-    position: relative;
-   left: 40%;
-    margin: 0px;
-    //display: inline-block;
-    
 
-}
 #movie
 {
 //clear: right;
@@ -125,7 +129,10 @@ h3
     margin-right: 5px;
     margin-left: 5px;
 }
-
+table
+{
+    margin-bottom: 10px;
+}
 tr
 {
 vertical-align: top;
@@ -140,6 +147,7 @@ vertical-align: top;
    width: auto;
 margin-left: 0px;
 vertical-align: top;
+float: right;
 
 }
 
@@ -148,9 +156,6 @@ vertical-align: top;
     @include articleStyle;
    @extend %movieSearchResults;
     margin: 10px auto;
-
-/*  
-*/
      display: block;
 
 }
@@ -167,8 +172,6 @@ footer
 {  
     @include backgroundColorRepeats;
 	width:100%;
-
-position: fixed;
 	bottom:0;
 	left:0;
 }
@@ -195,14 +198,16 @@ p{
 @include borderRadius;
     @extend #footerInfo;
 
-    float: left;
-    clear: left;
+
+clear: both;
 display: block;
     //use of extend 
 //font:
 //{
  //   text-align: center;
+ width: 15em;
 
+margin: 25px auto;
     font-weight: 900;
 
 
