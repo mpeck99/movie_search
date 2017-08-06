@@ -7,4 +7,4 @@ HTML
 JavaScript
 JSON Data.
 You can visit my site locally at 
-https://mpeck9.bitbucket.io/DWS2
+https://mpeck99.github.io/index.html
