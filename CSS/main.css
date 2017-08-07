@@ -29,6 +29,9 @@ html, body {
     font-family: "Roboto", sans-serif;
     color: #081c24; }
 
+#connectForm h1 {
+  color: #01d277; }
+
 #container {
   min-height: 100%;
   width: 100%; }

@@ -48,4 +48,21 @@ fetch(newURL)
 
 
 
+function getCurrentLinkFrom(links){
 
+    var curPage = document.URL;
+    curPage = curPage.substr(curPage.lastIndexOf("/")) ;
+
+    links.each(function(){
+        var linkPage = $(this).attr("href");
+        linkPage = linkPage.substr(linkPage.lastIndexOf("/"));
+        if (curPage == linkPage){
+            return $(this);
+        }
+    });
+};
+
+$(document).ready(function(){
+    var currentLink = getCurrentLinkFrom($("navbar a"));
+    currentLink.addClass("current_link") ;
+});
