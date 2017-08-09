@@ -1,49 +1,51 @@
-<!DOCTYPE: html>
+<!DOCTYPE html>
 <html lang='en'>
-    <head>
-        <meta charset="utf-8">
-        <link rel=stylesheet href='CSS/main.css'/>       
-        </head>
-    <body>  
-        <div id="container">
-        <header>
-            <img src="search-assets/movieicon.png" id="logo">
-            <h1>MovieGo</h1>
-            <nav id=navigation>
-                <a id="homePage" href="index.html">Home</a>
-                 <a href='about.html' >About</a>
-                  <a href='connect.html' >Connect</a>
-            </nav>
+<head>
+    <meta charset="utf-8">
+    <title>MovieGo</title> 
+    <meta name="viewport" content: "width=device-width, initial scale=1">
+    <link rel=stylesheet href='CSS/main.css'/>              
+</head>
+
+<body>  
+    <div id="container">
+    
+    <header>
+        <img src="search-assets/movieicon.png" id="logo">
+        <h1>MovieGo</h1>
+        <nav id=navigation>
+            <a id="homePage" href="index.html">Home</a>
+            <a href='about.html' >About</a>
+            <a href='connect.html' >Connect</a>
+        </nav>
         <section id="searchInfo">
              <h3>Search for your favorite movie</h3></br>
-            <span class="inline-group">
-                    <input type="text" id="movie"/> <button id="searchButton"><img src="search-assets/search.png" id="searchButton"></button>
-            </span> 
-                        
-        </section>
-                
-        </header>
-<section id="results">
-    <span id="resultsHeader">
-<h1>Results for </h1>
-    </span>
-<article id='searchResults'>
-    <h4 id="movieTitle"></h4>
-    <p id="movieYear"></p>
-</article>
-</section>
-<a href="https://www.themoviedb.org" id='moreButton'>View more on TMDB</a>
-<footer id="footer">
+        <span class="inline-group">
+            <input type="text" id="movie"/> <button id="searchButton"><img src="search-assets/search.png" id="searchButton"></button>
+        </span>                        
+        </section>                
+    </header>
+
+    <section id="results">
+        <span id="resultsHeader">
+            <h1>Results for </h1>
+        </span>
+        <article id='searchResults'>
+            <h4 id="movieTitle"></h4>
+            <p id="movieYear"></p>
+        </article>
+    </section>
+        <a href="https://www.themoviedb.org" id='moreButton'>View more on TMDB</a>
+    
+    <footer id="footer">
     <div id='footerInfo'>
-    <p>Built by Morgan Peck for DWS2</p>
-    <p>Logo courtsey of Noun Project</p>
+            <p>Built by Morgan Peck for DWS2</p>
+            <p>Logo courtsey of Noun Project</p>
     </div>
     </footer>
-</div>
-</body> 
+    </div>
+</body>
 
+<script type= "text/javascript"src="apiData.js"></script> 
 
-<script type= "text/javascript"src="apiData.js">
-</script>    
-   
 </html>

@@ -4,31 +4,31 @@
 var apiSearch=new XMLHttpRequest();
 var url='https://api.themoviedb.org/3/search/movie?api_key=8c5361b08a74793d93e58ba2ab123299&query=';
 var userInput;
- var newURL;
- //creating a variable so when the search button is clicked
+var newURL;
 var search=document.getElementById('searchButton');
 
-search.onclick=function(){   
-userInput=document.querySelector('#movie').value; 
-newURL=url+userInput+"&page=1&include_adult=false";
-
-fetch(newURL)
-.then(response=>response.json())
-.then(responseAsJson=>{
+function searchForMovies(){   
+    userInput=document.querySelector('#movie').value; 
+    newURL=url+userInput+"&page=1&include_adult=false";
+//Loading the json data from The Movie Database
+    fetch(newURL)
+    .then(response=>response.json())
+    .then(responseAsJson=>{
+//Variables to hold results
     var movieResults;  
     movieResults+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
     movieResults+='<section id="movies">'; 
+    //Looping through the api data returned
     for(var i=0; i<responseAsJson.results.length;i++)
         {
+            //conditional to limit reults to only 9 
             if(i<9){
                
-            movieResults+='<table id="movieSearchResults">';
-            movieResults+='<tr>';
-           movieResults+='<th><img src="https://image.tmdb.org/t/p/w500'+responseAsJson.results[i]["poster_path"]+'" id="moviePoster" /></th>';
-           movieResults+='<tr>';
-            movieResults+='<td id="data"><h6 id="movieTitle">'+responseAsJson.results[i]["title"]+'</h6>';
-            movieResults+='<p id="movieYear">'+responseAsJson.results[i]["release_date"]+'</p></td>';
-            movieResults+='</table>';
+                movieResults+='<article id="movieSearchResults">';
+                movieResults+='<img src="https://image.tmdb.org/t/p/w500'+responseAsJson.results[i]["poster_path"]+'" id="moviePoster" />';
+                movieResults+='<span id="data"><h5 id="movieTitle">'+responseAsJson.results[i]["title"]+'</h5>';
+                movieResults+='<h6 id="movieYear">'+responseAsJson.results[i]["release_date"]+'</h6></span>';
+                movieResults+='</article>';
            
             }
               
@@ -41,28 +41,12 @@ fetch(newURL)
         document.getElementById('results').innerHTML=movieResults;
     }
 })
-.catch(Error=>{
+    .catch(Error=>{
     console.log('error',Error);
-})
+    })
    }
+//
+search.addEventListener('click',searchForMovies,false);
 
 
 
-function getCurrentLinkFrom(links){
-
-    var curPage = document.URL;
-    curPage = curPage.substr(curPage.lastIndexOf("/")) ;
-
-    links.each(function(){
-        var linkPage = $(this).attr("href");
-        linkPage = linkPage.substr(linkPage.lastIndexOf("/"));
-        if (curPage == linkPage){
-            return $(this);
-        }
-    });
-};
-
-$(document).ready(function(){
-    var currentLink = getCurrentLinkFrom($("navbar a"));
-    currentLink.addClass("current_link") ;
-});

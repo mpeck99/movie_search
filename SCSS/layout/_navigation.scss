@@ -1,0 +1,10 @@
+@mixin navLayout($flexDisplay,$color,$marginSize, $flex-right, $navFont, $decoration, $row)
+{
+    color: $color;
+    display: $flexDisplay;
+    margin: $marginSize;
+    justify-content: $flex-right;
+    font-family: $navFont;
+    text-decoration: $decoration;
+    flex-direction: $row;
+}

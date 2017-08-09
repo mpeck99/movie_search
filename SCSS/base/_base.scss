@@ -1,8 +1,10 @@
+@import 'layout/navigation';
+
 html, body{
     background-color: $neutral;
     margin:0;
 	padding:0;
-   height: auto;
+    height: auto;
     display: block;
     font-family: $font-stack-title;
     p
@@ -10,9 +12,10 @@ html, body{
         font-family: $font-stack-p;
     }   
 }
+
 #aboutInformation
 {
-   width: 200px;
+    width: 200px;
     margin: 10px auto;
     h2
     {
@@ -36,11 +39,13 @@ html, body{
        
     }
 }
+
 #container
 {
     min-height:100%;
     width: 100%
 }
+
 header
 {
     background-image:  url('../search-assets/theatreImage.jpg');
@@ -50,129 +55,108 @@ header
     background-size: cover;
     
 }
+
 #resultsHeader 
 {
     @include backgroundColorRepeats;
     color: $neutral; 
     padding: 10px;
-    display: inline;
-  
+    display: inline;  
 }
-#navigation
-{
-    float: right;
-    margin: 20px;    
-    a
-    {
-    
-         color: $neutral; 
-          text-decoration: none;
-          margin: 10px;
-          font-family: $font-stack-title;
-    }    
-}
-a:link, a:visited
-{
-    color: $secondary-color;
+
+#navigation 
+{   
+    @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);  
+   a
+   {
+       @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row);  
+       
+   }
 }
 
 #Logo 
 {
     
     margin: 20px;
-}h1
-    {
-       font-family: $font-stack-title;
+}
+
+h1
+{
+    font-family: $font-stack-title;
     color: $neutral;
- display: inline;
-    }
+    display: inline;
+}
+
 h3
 {
     margin-left: 570px; 
     margin-bottom: 0px;
     background-color: $primary-color;
-   // display: block;
     color: $neutral;
     width: 280px;
+
 }
+
 #searchInfo
-{
-    width: auto;
-    margin: 10px auto; 
+{       
     .inline-group
     {
-        margin-left: 500px;
-        #searchButton
-        {
-            width: 30px;
-            height: 32px;
-            margin-right: 380px;
-        }
+       display: flex;
+       justify-content: center;
+       
     }
 }
+#searchButton button
+{
+    width: 50px;
+    height: 32px;
+  
+}
+
 #searchInfo h3
 {
-    margin-left: 500px;
+    margin-left: 30%;
     margin-bottom: 0px;
 }
+
 #movie
 {
-//clear: right;
-   margin: 0px auto;
+    margin: 0px auto;
     width: 500px;
     background-color: $neutral;
     margin: 0px;
     font-family: $font-stack-p;
-    font-size: 20px;
+        font-size: 20px;
+        
 }
+
 #movieSearchResults
 {
-  
     max-width: 400px;
     float: right;
     display: block;
-    margin-right: 5px;
-    margin-left: 5px;
-}
-table
-{
-    margin-bottom: 10px;
-}
-tr
-{
-    vertical-align: top;
-    display:inline-block;
-}
-   
- 
+    margin: 10px 5px;
 
-#searchButton
-{
-   height: 30px;
-   width: auto;
-margin-left: 0px;
-vertical-align: top;
-float: right;
+}   
 
-}
 
 #movies
 {
     @include articleStyle;
-   @extend %movieSearchResults;
-    margin: 10px auto;
-     display: block;
-
+    @extend %movieSearchResults;
+   width: 55%;
+    display: flex;
+    flex-wrap: wrap;
 }
-#data
+
+h5 ,h6
 {
-   
-    @include backgroundColorRepeats;
-   @extend p;
-   vertical-align: top;
-
-   
+    background-color: $primary-color;
+    margin: 0px;
+    padding: 2px;
+    height: 20px;
 }
+
 footer
 {  
     @include backgroundColorRepeats;
@@ -180,33 +164,31 @@ footer
 	bottom:0;
 	left:0;
 }
-p{
-  padding: 5px;
-  width: 230px;
 
- margin-bottom: 10px;
+p{
+    padding: 5px;
+    width: 230px;
+    margin-bottom: 10px;
 }
+
   #footerInfo
 {
   
-        margin: 20px auto;
-        width:15em;
-        text-align: center;
-        color: $secondary-color;
-        background-color: $primary-color;
+    margin: 20px auto;
+    width:15em;
+    text-align: center;
+    color: $secondary-color;
+    background-color: $primary-color;
 }
+
 #moreButton
 { 
-@include borderRadius;
+    @include borderRadius;
     @extend #footerInfo;
-
-text-decoration: none;
-clear: both;
-display: block;
- width: 10em;
-margin: 25px auto;
-font-weight: 900;
-
-
-
+    text-decoration: none;
+    clear: both;
+    display: block;
+    width: 10em;
+    margin: 25px auto;
+    font-weight: 900;
 }

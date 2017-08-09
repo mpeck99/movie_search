@@ -16,7 +16,7 @@ html, body {
   height: auto;
   display: block;
   font-family: "PT Sands", sans-serif; }
-  html p, html #data, body p, body #data {
+  html p, body p {
     font-family: "Roboto", sans-serif; }
 
 #aboutInformation, #connectForm {
@@ -25,7 +25,7 @@ html, body {
   #aboutInformation h2, #connectForm h2 {
     font-family: "PT Sands", sans-serif;
     color: #01d277; }
-  #aboutInformation p, #connectForm p, #aboutInformation #data, #connectForm #data {
+  #aboutInformation p, #connectForm p {
     font-family: "Roboto", sans-serif;
     color: #081c24; }
 
@@ -50,16 +50,21 @@ header {
   display: inline; }
 
 #navigation {
-  float: right;
-  margin: 20px; }
+  color: #E5E5E5;
+  display: flex;
+  margin: 5px;
+  justify-content: flex-end;
+  font-family: "PT Sands", sans-serif;
+  text-decoration: none;
+  flex-direction: row; }
   #navigation a {
     color: #E5E5E5;
-    text-decoration: none;
+    display: flex;
     margin: 10px;
-    font-family: "PT Sands", sans-serif; }
-
-a:link, a:visited {
-  color: #01d277; }
+    justify-content: flex-end;
+    font-family: "PT Sands", sans-serif;
+    text-decoration: none;
+    flex-direction: row; }
 
 #Logo {
   margin: 20px; }
@@ -76,18 +81,16 @@ h3 {
   color: #E5E5E5;
   width: 280px; }
 
-#searchInfo {
-  width: auto;
-  margin: 10px auto; }
-  #searchInfo .inline-group {
-    margin-left: 500px; }
-    #searchInfo .inline-group #searchButton {
-      width: 30px;
-      height: 32px;
-      margin-right: 380px; }
+#searchInfo .inline-group {
+  display: flex;
+  justify-content: center; }
+
+#searchButton button {
+  width: 50px;
+  height: 32px; }
 
 #searchInfo h3 {
-  margin-left: 500px;
+  margin-left: 30%;
   margin-bottom: 0px; }
 
 #movie {
@@ -102,34 +105,22 @@ h3 {
   max-width: 400px;
   float: right;
   display: block;
-  margin-right: 5px;
-  margin-left: 5px; }
-
-table {
-  margin-bottom: 10px; }
-
-tr {
-  vertical-align: top;
-  display: inline-block; }
-
-#searchButton {
-  height: 30px;
-  width: auto;
-  margin-left: 0px;
-  vertical-align: top;
-  float: right; }
+  margin: 10px 5px; }
 
 #movies {
-  margin: 10px auto;
-  display: block; }
+  width: 55%;
+  display: flex;
+  flex-wrap: wrap; }
   #movies #movieTitle {
     color: #01d277; }
   #movies #movieYear {
     color: #E5E5E5; }
 
-#data {
+h5, h6 {
   background-color: #081c24;
-  vertical-align: top; }
+  margin: 0px;
+  padding: 2px;
+  height: 20px; }
 
 footer {
   background-color: #081c24;
@@ -137,7 +128,7 @@ footer {
   bottom: 0;
   left: 0; }
 
-p, #data {
+p {
   padding: 5px;
   width: 230px;
   margin-bottom: 10px; }
