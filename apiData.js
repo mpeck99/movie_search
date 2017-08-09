@@ -6,7 +6,7 @@ var url='https://api.themoviedb.org/3/search/movie?api_key=8c5361b08a74793d93e58
 var userInput;
 var newURL;
 var search=document.getElementById('searchButton');
-
+ var movieResults; 
 function searchForMovies(){   
     userInput=document.querySelector('#movie').value; 
     newURL=url+userInput+"&page=1&include_adult=false";
@@ -15,9 +15,9 @@ function searchForMovies(){
     .then(response=>response.json())
     .then(responseAsJson=>{
 //Variables to hold results
-    var movieResults;  
+   
     movieResults+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
-    movieResults+='<section id="movies">'; 
+    movieResults+='<section id="movies">';  
     //Looping through the api data returned
     for(var i=0; i<responseAsJson.results.length;i++)
         {

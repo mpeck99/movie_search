@@ -102,9 +102,8 @@ h3 {
   font-size: 20px; }
 
 #movieSearchResults {
-  max-width: 400px;
-  float: right;
-  display: block;
+  flex-direction: column;
+  display: flex;
   margin: 10px 5px; }
 
 #movies {
@@ -125,8 +124,7 @@ h5, h6 {
 footer {
   background-color: #081c24;
   width: 100%;
-  bottom: 0;
-  left: 0; }
+  display: flex; }
 
 p {
   padding: 5px;
@@ -134,19 +132,19 @@ p {
   margin-bottom: 10px; }
 
 #footerInfo, #moreButton {
-  margin: 20px auto;
-  width: 15em;
-  text-align: center;
+  text-decoration: none;
+  display: flex;
+  width: 5%;
+  justify-content: space-between;
   color: #01d277;
-  background-color: #081c24; }
+  background-color: #081c24;
+  margin-bottom: 0%; }
 
 #moreButton {
   border-radius: 10px;
   border-style: none;
   padding: 1em;
-  text-decoration: none;
   clear: both;
-  display: block;
+  align-self: center;
   width: 10em;
-  margin: 25px auto;
   font-weight: 900; }

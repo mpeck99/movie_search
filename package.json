@@ -14,7 +14,9 @@
   "license": "ISC",
   "homepage": "https://bitbucket.org/mpeck9/dws2#readme",
   "dependencies": {
+    "autoprefixer": "^7.1.2",
     "browser-sync": "^2.18.13",
+    "gulp-postcss": "^7.0.0",
     "nodes": "^0.1.0"
   },
   "devDependencies": {
