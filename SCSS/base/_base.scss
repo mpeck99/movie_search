@@ -69,8 +69,7 @@ header
     @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);  
    a
    {
-       @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row);  
-       
+        @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row);     
    }
 }
 
@@ -126,15 +125,15 @@ h3
     background-color: $neutral;
     margin: 0px;
     font-family: $font-stack-p;
-        font-size: 20px;
+    font-size: 20px;
         
 }
 
 #movieSearchResults
 {
-    max-width: 400px;
-    float: right;
-    display: block;
+    width: 50%;
+    display: flex;
+    justify-content: center;
     margin: 10px 5px;
 
 }   
@@ -144,7 +143,7 @@ h3
 {
     @include articleStyle;
     @extend %movieSearchResults;
-   width: 55%;
+    width: 55%;
     display: flex;
     flex-wrap: wrap;
 }
