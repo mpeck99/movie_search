@@ -79,7 +79,9 @@ header {
       flex-direction: row; } }
   @media (min-width: 800px) {
     #navigation a {
-      visibility: visible; } }
+      visibility: visible; }
+      #navigation a #hamburger {
+        visibility: hidden; } }
 
 #Logo {
   margin: 20px; }

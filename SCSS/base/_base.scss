@@ -103,6 +103,10 @@ $phone: '(min-width: 300px)';
         @media #{$desktop}
         {
             visibility: visible;
+            #hamburger
+            {
+                visibility: hidden;
+            }
         }     
    }  
 }
