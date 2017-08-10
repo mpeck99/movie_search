@@ -3,7 +3,7 @@
 {
     @if $screenSize==small
     {
-        @media(min-width: 425px){@content;}
+        @media(min-width: 320px){@content;}
     }
     @else if $screenSize==medium
     {
@@ -14,8 +14,8 @@
         @media(min-width: 800px){@content;}
     }
 }
-
-html, body{
+html, body
+{
     background-color: $neutral;
     margin:0;
 	padding:0;
@@ -27,7 +27,6 @@ html, body{
         font-family: $font-stack-p;
     }   
 }
-
 #aboutInformation
 {
     width: 200px;
@@ -57,22 +56,40 @@ html, body{
 
 #container
 {
+    @include mq(small)
+    {
+         min-height:100%;
+        width: 100%
+    }
     min-height:100%;
     width: 100%
 }
 
 header
 {
+    @include mq(small)
+    {
+    background-image:  url('../search-assets/theatreImage.jpg');
+    margin-bottom: 15px;
+    width: 100%;
+    height: 10em;
+    background-size: cover;
+    }
+@include mq(large)
+{
     background-image:  url('../search-assets/theatreImage.jpg');
     margin-bottom: 10px;
     width: 100%;
     height: 20em;
     background-size: cover;
+}
+ 
     
 }
 
 #resultsHeader 
 {
+
     @include backgroundColorRepeats;
     color: $neutral; 
     padding: 10px;
@@ -80,32 +97,58 @@ header
 }
 #hamburger
 {
-    margin-left: 10px;
+    @include mq(small)
+    {
+        img
+        {
+        width: 25px;
+        height: 25px;
+        }
+        
+    }
 }
 #navigation 
 { 
     @include  mq(small)
     {
-        a {
+        a 
+        {
             margin: 10px;
             visibility: hidden;
         }
     }
-
+    @include mq(large)
+    {
         a
         {
-          @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);   
+            visibility: visible;
         }
-      @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row); 
+        #hamburger
+        {
+            visibility: hidden;
+        }
+    }
+    a
+    {
+    @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);   
+    }
+    @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row); 
      
 
  
 }
 
-#Logo 
+header img
 {
-    
-    margin: 20px;
+    @include mq(small)
+    {
+        width: 50px;
+    }
+    @include mq(large)
+    {
+        width: 100px;
+    }
+   
 }
 
 h1
@@ -124,27 +167,25 @@ h3
     width: 280px;
 
 }
-
-#searchInfo
-{       
-    .inline-group
-    {
-       display: flex;
-       justify-content: center;
        
-    }
+.inline-group
+{
+    display: flex;
+    justify-content: center;
+    height: 50px;
 }
+
 #searchButton button
 {
     width: 50px;
     height: 32px;
   
 }
-
 #searchInfo h3
 {
     margin-left: 30%;
     margin-bottom: 0px;
+    
 }
 
 #movie
@@ -171,9 +212,11 @@ h3
 {
     @include articleStyle;
     @extend %movieSearchResults;
+
     width: 55%;
     display: flex;
     flex-wrap: wrap;
+  
 
 }
 
@@ -189,6 +232,7 @@ h5 ,h6
 footer
 {  
     @include backgroundColorRepeats;
+
 	width:100%;
 //	bottom:0;
 	left:0;
@@ -201,7 +245,6 @@ p{
 
   #footerInfo
 {
-  
     text-decoration: none;
     display: flex;
     width:5%;
