@@ -1,19 +1,16 @@
 @import 'layout/navigation';
-/*@mixin mq($screenSize)
+@mixin mq($screenSize)
 {
-    @if $screenSize==small
+    @if $screenSize == small
     {
-        @media(min-width: 320px){@content;}
+        @media(min-width: 320px)and(max-width:425px){@content;}
     }
-    @else if $screenSize==medium
-    {
-        @media(min-width:600px){@content;}
-    }
-    @else if $screenSize==large
+    @else if $screenSize == large
     {
         @media(min-width: 800px){@content;}
     }
-}*/
+}
+
 html, body{
     background-color: $neutral;
     margin:0;
@@ -81,36 +78,32 @@ header
 {
     margin-left: 10px;
 }
-$desktop: '(min-width: 800px)';
-$phone: '(max-width: 600px)';
 #navigation 
-{ /* @include mq(small)
+{ 
+@include mq(small)
+{
+     a
     {
-        a
-        {
-            visibility: hidden;
-        }
-    }*/  @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row); 
+        visibility: hidden;
+    }
+}
+@include mq(large)
+{
+a
+{
+    visibility: visible;
+    @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);
+}  
+    #hamburger
+    {
+        visibility: hidden;
+    }
+}
 
-       @media (min-width: 425px)
-    {
-        a
-        {     @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);  
-                visibility: hidden;
-        
-        } 
-   } 
-    @media(min-width: 800px)
-    {
-        a
-        {
-            visibility: visible;
-        }
-        #hamburger
-        {
-            visibility: hidden;
-        }
-    } 
+      @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row); 
+     
+
+ 
 }
 
 #Logo 
