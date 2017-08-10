@@ -82,7 +82,7 @@ header
     margin-left: 10px;
 }
 $desktop: '(min-width: 800px)';
-$phone: '(min-width: 600px)';
+$phone: '(min-width: 300px)';
 #navigation 
 { /* @include mq(small)
     {
