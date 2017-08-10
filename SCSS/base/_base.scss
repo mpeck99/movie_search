@@ -100,7 +100,10 @@ $phone: '(min-width: 300px)';
         visibility: hidden;
         @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row);
     }
-             
+        @media #{$desktop}
+        {
+            visibility: visible;
+        }     
    }  
 }
 

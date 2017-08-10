@@ -77,6 +77,9 @@ header {
       font-family: "PT Sands", sans-serif;
       text-decoration: none;
       flex-direction: row; } }
+  @media (min-width: 800px) {
+    #navigation a {
+      visibility: visible; } }
 
 #Logo {
   margin: 20px; }
