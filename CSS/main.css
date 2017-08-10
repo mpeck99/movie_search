@@ -9,6 +9,25 @@
   width: 250px;
   height: 250px; }
 
+/*@mixin mq($screenSize)
+{
+    @if $screenSize==small
+    {
+        @media(min-width: 425px){@content;}
+    }
+    @else if $screenSize==medium
+    {
+        @media(min-width:600px){@content;}
+    }
+    @else if $screenSize==large
+    {
+        @media(min-width: 800px){@content;}
+    }
+}*/
+@media screen and (max-width: 425px) {
+  #navigation a {
+    visibility: hidden; } }
+
 html, body {
   background-color: #E5E5E5;
   margin: 0;
@@ -60,21 +79,14 @@ header {
   font-family: "PT Sands", sans-serif;
   text-decoration: none;
   flex-direction: row; }
-  @media (min-width: 320px) and (max-width: 425px) {
-    #navigation a {
-      visibility: hidden; } }
-  @media (min-width: 800px) {
-    #navigation a {
-      visibility: visible;
-      color: #E5E5E5;
-      display: flex;
-      margin: 5px;
-      justify-content: flex-end;
-      font-family: "PT Sands", sans-serif;
-      text-decoration: none;
-      flex-direction: row; }
-    #navigation #hamburger {
-      visibility: hidden; } }
+  #navigation a {
+    color: #E5E5E5;
+    display: flex;
+    margin: 5px;
+    justify-content: flex-end;
+    font-family: "PT Sands", sans-serif;
+    text-decoration: none;
+    flex-direction: row; }
 
 #Logo {
   margin: 20px; }
