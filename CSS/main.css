@@ -52,24 +52,24 @@ header {
 #hamburger {
   margin-left: 10px; }
 
-@media (min-width: 300px) {
-  #navigation a {
-    visibility: hidden; } }
-
-@media (min-width: 800px) {
-  #navigation {
-    color: #E5E5E5;
-    display: flex;
-    margin: 5px;
-    justify-content: flex-end;
-    font-family: "PT Sands", sans-serif;
-    text-decoration: none;
-    flex-direction: row; }
-    #navigation #hamburger {
-      visibility: hidden; }
+#navigation {
+  /* @include mq(small)
+    {
+        a
+        {
+            visibility: hidden;
+        }
+    }*/
+  color: #E5E5E5;
+  display: flex;
+  margin: 5px;
+  justify-content: flex-end;
+  font-family: "PT Sands", sans-serif;
+  text-decoration: none;
+  flex-direction: row; }
+  @media (min-width: 600px) {
     #navigation a {
-      visibility: visible; }
-    #navigation a {
+      visibility: hidden;
       color: #E5E5E5;
       display: flex;
       margin: 10px;
@@ -77,6 +77,9 @@ header {
       font-family: "PT Sands", sans-serif;
       text-decoration: none;
       flex-direction: row; } }
+  @media (min-width: 800px) {
+    #navigation a {
+      visibility: visible; } }
 
 #Logo {
   margin: 20px; }

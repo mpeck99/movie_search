@@ -3,7 +3,7 @@
 {
     @if $screenSize==small
     {
-        @media(min-width: 300px){@content;}
+        @media(min-width: 320px){@content;}
     }
     @else if $screenSize==medium
     {
@@ -81,31 +81,31 @@ header
 {
     margin-left: 10px;
 }
+$desktop: '(min-width: 800px)';
+$phone: '(min-width: 600px)';
 #navigation 
-{   @include mq(small)
+{ /* @include mq(small)
     {
         a
         {
             visibility: hidden;
         }
-    }
-@include mq(large)
-{
-    #hamburger
+    }*/
+   
+    @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);  
+   a
+   { 
+       @media #{$phone}
     {
         visibility: hidden;
+        @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row);
     }
-    a
+    @media #{$desktop}
     {
         visibility: visible;
     }
-    @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);  
-   a
-   {
-        @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row);     
-   }
-}
-    
+             
+   }  
 }
 
 #Logo 
