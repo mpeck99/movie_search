@@ -92,7 +92,7 @@ header {
       text-decoration: none;
       flex-direction: row;
       visibility: hidden; } }
-  @media (max-width: 1200px) {
+  @media (min-width: 800px) {
     #navigation a {
       visibility: visible; }
     #navigation #hamburger {
