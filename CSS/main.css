@@ -49,22 +49,34 @@ header {
   padding: 10px;
   display: inline; }
 
-#navigation {
-  color: #E5E5E5;
-  display: flex;
-  margin: 5px;
-  justify-content: flex-end;
-  font-family: "PT Sands", sans-serif;
-  text-decoration: none;
-  flex-direction: row; }
+#hamburger {
+  margin-left: 10px; }
+
+@media (min-width: 300px) {
   #navigation a {
+    visibility: hidden; } }
+
+@media (min-width: 800px) {
+  #navigation {
     color: #E5E5E5;
     display: flex;
-    margin: 10px;
+    margin: 5px;
     justify-content: flex-end;
     font-family: "PT Sands", sans-serif;
     text-decoration: none;
     flex-direction: row; }
+    #navigation #hamburger {
+      visibility: hidden; }
+    #navigation a {
+      visibility: visible; }
+    #navigation a {
+      color: #E5E5E5;
+      display: flex;
+      margin: 10px;
+      justify-content: flex-end;
+      font-family: "PT Sands", sans-serif;
+      text-decoration: none;
+      flex-direction: row; } }
 
 #Logo {
   margin: 20px; }
@@ -124,18 +136,17 @@ h5, h6 {
 footer {
   background-color: #081c24;
   width: 100%;
-  display: flex; }
+  left: 0; }
 
 p {
   padding: 5px;
-  width: 230px;
   margin-bottom: 10px; }
 
 #footerInfo, #moreButton {
   text-decoration: none;
   display: flex;
   width: 5%;
-  justify-content: space-between;
+  justify-content: center;
   color: #01d277;
   background-color: #081c24;
   margin-bottom: 0%; }
@@ -144,7 +155,5 @@ p {
   border-radius: 10px;
   border-style: none;
   padding: 1em;
-  clear: both;
-  align-self: center;
   width: 10em;
   font-weight: 900; }

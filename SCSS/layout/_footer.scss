@@ -1,0 +1,8 @@
+@mixin footerMix($footerWidth, $display, $deco, $marginB)
+{
+	width:$footerWidth;
+    display: $display;
+    text-decoration: $deco;
+    margin-bottom: $marginB;
+}
+

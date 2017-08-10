@@ -1,5 +1,19 @@
 @import 'layout/navigation';
-
+@mixin mq($screenSize)
+{
+    @if $screenSize==small
+    {
+        @media(min-width: 300px){@content;}
+    }
+    @else if $screenSize==medium
+    {
+        @media(min-width:600px){@content;}
+    }
+    @else if $screenSize==large
+    {
+        @media(min-width: 800px){@content;}
+    }
+}
 html, body{
     background-color: $neutral;
     margin:0;
@@ -63,14 +77,35 @@ header
     padding: 10px;
     display: inline;  
 }
-
+#hamburger
+{
+    margin-left: 10px;
+}
 #navigation 
-{   
+{   @include mq(small)
+    {
+        a
+        {
+            visibility: hidden;
+        }
+    }
+@include mq(large)
+{
+    #hamburger
+    {
+        visibility: hidden;
+    }
+    a
+    {
+        visibility: visible;
+    }
     @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);  
    a
    {
         @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row);     
    }
+}
+    
 }
 
 #Logo 
@@ -161,14 +196,12 @@ footer
 {  
     @include backgroundColorRepeats;
 	width:100%;
-    display: flex;
-
-    
+//	bottom:0;
+	left:0;
 }
 
 p{
     padding: 5px;
-    width: 230px;
     margin-bottom: 10px;
 }
 
@@ -178,19 +211,17 @@ p{
     text-decoration: none;
     display: flex;
     width:5%;
-    justify-content: space-between;
+    justify-content: center;
     color: $secondary-color;
     background-color: $primary-color;
     margin-bottom: 0%;
-
 }
 
 #moreButton
 { 
     @include borderRadius;
     @extend #footerInfo;
-    clear: both;
-    align-self: center;
+   // justify-content: center;
     width: 10em;
     font-weight: 900;
 }
