@@ -1,5 +1,5 @@
 @import 'layout/navigation';
-@mixin mq($screenSize)
+/*@mixin mq($screenSize)
 {
     @if $screenSize==small
     {
@@ -13,7 +13,7 @@
     {
         @media(min-width: 800px){@content;}
     }
-}
+}*/
 html, body{
     background-color: $neutral;
     margin:0;
@@ -82,7 +82,7 @@ header
     margin-left: 10px;
 }
 $desktop: '(min-width: 800px)';
-$phone: '(min-width: 300px)';
+$phone: '(max-width: 600px)';
 #navigation 
 { /* @include mq(small)
     {
@@ -90,25 +90,27 @@ $phone: '(min-width: 300px)';
         {
             visibility: hidden;
         }
-    }*/
-   
-    @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);  
-   a
-   { 
-       @media #{$phone}
+    }*/  @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row); 
+
+       @media (min-width: 425px)
     {
-        visibility: hidden;
-        @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row);
-    }
-        @media #{$desktop}
+        a
+        {     @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);  
+                visibility: hidden;
+        
+        } 
+   } 
+    @media(max-width: 1200px)
+    {
+        a
         {
             visibility: visible;
-            #hamburger
-            {
-                visibility: hidden;
-            }
-        }     
-   }  
+        }
+        #hamburger
+        {
+            visibility: hidden;
+        }
+    } 
 }
 
 #Logo 
