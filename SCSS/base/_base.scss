@@ -14,8 +14,10 @@
         @media(min-width: 800px){@content;}
     }
 }
-html, body
-{
+
+
+html, body{
+
     background-color: $neutral;
     margin:0;
 	padding:0;
@@ -27,6 +29,7 @@ html, body
         font-family: $font-stack-p;
     }   
 }
+
 #aboutInformation
 {
     width: 200px;
@@ -58,7 +61,7 @@ html, body
 {
     @include mq(small)
     {
-         min-height:100%;
+        min-height:100%;
         width: 100%
     }
     min-height:100%;
@@ -66,25 +69,55 @@ html, body
 }
 
 header
-{
-    @include mq(small)
-    {
-    background-image:  url('../search-assets/theatreImage.jpg');
-    margin-bottom: 15px;
-    width: 100%;
-    height: 10em;
-    background-size: cover;
-    }
-@include mq(large)
-{
+{   
     background-image:  url('../search-assets/theatreImage.jpg');
     margin-bottom: 10px;
     width: 100%;
     height: 20em;
     background-size: cover;
-}
- 
+    @include mq(small)
+    {
+    background-image:  url('../search-assets/theatreImage.jpg');
+    margin-bottom: 15px;
+    width: 100%;
+    height:15em;
+    background-size: cover;
+    h3
+    {
+        margin: 0px;
+    }
+    .inline-group
+    {
+            #movie
+            {
+                width: 300px;
+            }
+            button
+            {
+                width: 30px;
+                height: 38px;
+                background: transparent;
+                border: none;
+            }
+            img
+            {
+                width: 75%;
+                height: 30px;
+            }
+    }
+    #searchInfo h3
+    {
+        margin: 0px;
     
+    }
+    }
+@include mq(large)
+{
+    #searchInfo h3
+    {
+        margin: 0px auto;
+    }
+}
 }
 
 #resultsHeader 
@@ -94,6 +127,8 @@ header
     color: $neutral; 
     padding: 10px;
     display: inline;  
+
+    
 }
 #hamburger
 {
@@ -119,13 +154,14 @@ header
     }
     @include mq(large)
     {
-        a
-        {
-            visibility: visible;
-        }
+        
         #hamburger
         {
             visibility: hidden;
+        }
+        a
+        {
+            visibility: visible;
         }
     }
     a
@@ -168,12 +204,7 @@ h3
 
 }
        
-.inline-group
-{
-    display: flex;
-    justify-content: center;
-    height: 50px;
-}
+
 
 #searchButton button
 {
@@ -196,18 +227,28 @@ h3
     margin: 0px;
     font-family: $font-stack-p;
     font-size: 20px;
+
         
 }
 
 #movieSearchResults
 {
-
+@include mq(small)
+    {
+        
+        #results
+        {
+           width: 50%; 
+        }
+   
+    }
     flex-direction: column;
     display: flex;
     margin: 10px 5px;
 }   
 
-
+   
+  
 #movies
 {
     @include articleStyle;
@@ -216,7 +257,7 @@ h3
     width: 55%;
     display: flex;
     flex-wrap: wrap;
-  
+ 
 
 }
 
@@ -255,10 +296,12 @@ p{
 }
 
 #moreButton
-{ 
+{     
+    width: 10em;
+    font-weight: 900;
+    margin: 10px auto;
     @include borderRadius;
     @extend #footerInfo;
    // justify-content: center;
-    width: 10em;
-    font-weight: 900;
+    
 }

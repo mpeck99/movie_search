@@ -40,21 +40,36 @@ html, body {
       min-height: 100%;
       width: 100%; } }
 
-@media (min-width: 320px) {
-  header {
-    background-image: url("../search-assets/theatreImage.jpg");
-    margin-bottom: 15px;
-    width: 100%;
-    height: 10em;
-    background-size: cover; } }
-
-@media (min-width: 800px) {
-  header {
-    background-image: url("../search-assets/theatreImage.jpg");
-    margin-bottom: 10px;
-    width: 100%;
-    height: 20em;
-    background-size: cover; } }
+header {
+  background-image: url("../search-assets/theatreImage.jpg");
+  margin-bottom: 10px;
+  width: 100%;
+  height: 20em;
+  background-size: cover; }
+  @media (min-width: 320px) {
+    header {
+      background-image: url("../search-assets/theatreImage.jpg");
+      margin-bottom: 15px;
+      width: 100%;
+      height: 15em;
+      background-size: cover; }
+      header h3 {
+        margin: 0px; }
+      header .inline-group #movie {
+        width: 300px; }
+      header .inline-group button {
+        width: 30px;
+        height: 38px;
+        background: transparent;
+        border: none; }
+      header .inline-group img {
+        width: 75%;
+        height: 30px; }
+      header #searchInfo h3 {
+        margin: 0px; } }
+  @media (min-width: 800px) {
+    header #searchInfo h3 {
+      margin: 0px auto; } }
 
 #resultsHeader {
   background-color: #081c24;
@@ -80,10 +95,10 @@ html, body {
       margin: 10px;
       visibility: hidden; } }
   @media (min-width: 800px) {
-    #navigation a {
-      visibility: visible; }
     #navigation #hamburger {
-      visibility: hidden; } }
+      visibility: hidden; }
+    #navigation a {
+      visibility: visible; } }
   #navigation a {
     color: #E5E5E5;
     display: flex;
@@ -113,11 +128,6 @@ h3 {
   color: #E5E5E5;
   width: 280px; }
 
-.inline-group {
-  display: flex;
-  justify-content: center;
-  height: 50px; }
-
 #searchButton button {
   width: 50px;
   height: 32px; }
@@ -138,6 +148,9 @@ h3 {
   flex-direction: column;
   display: flex;
   margin: 10px 5px; }
+  @media (min-width: 320px) {
+    #movieSearchResults #results {
+      width: 50%; } }
 
 #movies {
   width: 55%;
@@ -173,8 +186,9 @@ p {
   margin-bottom: 0%; }
 
 #moreButton {
+  width: 10em;
+  font-weight: 900;
+  margin: 10px auto;
   border-radius: 10px;
   border-style: none;
-  padding: 1em;
-  width: 10em;
-  font-weight: 900; }
+  padding: 1em; }

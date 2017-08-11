@@ -46,6 +46,9 @@ function searchForMovies()
 }
 //
 search.addEventListener('click',searchForMovies,false);
-
-
-
+/* working on saving the previous search results so that It will populate on load
+var saveResults;
+localStorage.setItem("saveSearchResults",JSON.stringify(searchResults));
+saveResults=JSON.parse(localStorage.getItem("saveSearchResults"));
+console.log(saveResults);
+*/
