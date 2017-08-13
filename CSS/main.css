@@ -46,6 +46,13 @@ header {
   width: 100%;
   height: 20em;
   background-size: cover; }
+  header .inline-group button {
+    height: 38px;
+    background: transparent;
+    border: none; }
+  header .inline-group img {
+    width: 75%;
+    height: 30px; }
   @media (min-width: 320px) {
     header {
       background-image: url("../search-assets/theatreImage.jpg");
@@ -55,21 +62,18 @@ header {
       background-size: cover; }
       header h3 {
         margin: 0px; }
-      header .inline-group #movie {
-        width: 300px; }
-      header .inline-group button {
-        width: 30px;
-        height: 38px;
-        background: transparent;
-        border: none; }
-      header .inline-group img {
-        width: 75%;
-        height: 30px; }
       header #searchInfo h3 {
         margin: 0px; } }
   @media (min-width: 800px) {
     header #searchInfo h3 {
-      margin: 0px auto; } }
+      margin: 0px auto; }
+    header .inline-group {
+      display: flex;
+      justify-content: center; }
+    header #movie input {
+      width: 25%; }
+    header #movie button {
+      width: 35%; } }
 
 #resultsHeader {
   background-color: #081c24;
@@ -93,12 +97,14 @@ header {
   @media (min-width: 320px) {
     #navigation a {
       margin: 10px;
-      visibility: hidden; } }
-  @media (min-width: 800px) {
-    #navigation #hamburger {
       visibility: hidden; }
-    #navigation a {
+    #navigation #hamburger {
       visibility: visible; } }
+  @media (min-width: 800px) {
+    #navigation a {
+      visibility: visible; }
+    #navigation #hamburger {
+      visibility: hidden; } }
   #navigation a {
     color: #E5E5E5;
     display: flex;
@@ -131,10 +137,6 @@ h3 {
 #searchButton button {
   width: 50px;
   height: 32px; }
-
-#searchInfo h3 {
-  margin-left: 30%;
-  margin-bottom: 0px; }
 
 #movie {
   margin: 0px auto;

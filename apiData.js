@@ -24,78 +24,71 @@ function searchForMovies()
     movieResults+='<section id="movies">';
      //Looping through the api data returned
     for(var i=0; i<responseAsJson.results.length;i++)
+    {        //conditional to limit reults to only 9 
+        if(i<9)
         {
-            //conditional to limit reults to only 9 
-            if(i<9)
-            {
-                movieResults+='<article id="movieSearchResults">';
-                movieResults+='<img src="https://image.tmdb.org/t/p/w500'+responseAsJson.results[i]["poster_path"]+'" id="moviePoster" />';
-                movieResults+='<span id="data"><h5 id="movieTitle">'+responseAsJson.results[i]["title"]+'</h5>';
-                movieResults+='<h6 id="movieYear">'+responseAsJson.results[i]["release_date"]+'</h6></span>';
-                movieResults+='</article>'; 
+            movieResults+='<article id="movieSearchResults">';
+            movieResults+='<img src="https://image.tmdb.org/t/p/w500'+responseAsJson.results[i]["poster_path"]+'" id="moviePoster" />';
+            movieResults+='<span id="data"><h5 id="movieTitle">'+responseAsJson.results[i]["title"]+'</h5>';
+            movieResults+='<h6 id="movieYear">'+responseAsJson.results[i]["release_date"]+'</h6></span>';
+            movieResults+='</article>'; 
                  
-            }
-               
-localStorage.setItem('movieData',JSON.stringify(responseAsJson.results));
-      
-        }  
-  movieResults+='</section>';
+        }   
+    localStorage.setItem('movieData',JSON.stringify(responseAsJson.results));     
+    }  
+    movieResults+='</section>';
 
 
    
-  searchResults=document.getElementById('results');
-  if(searchResults)
+    searchResults=document.getElementById('results');
+    if(searchResults)
     {
         document.getElementById('results').innerHTML=movieResults;
     } 
-
     })
     .catch(Error=>{
     console.log('error',Error);
     })
- 
-   
 }
-//
 search.addEventListener('click',searchForMovies,false);
-/* working on saving the previous search results so that It will populate on load
-var saveResults;
-localStorage.setItem("saveSearchResults",JSON.stringify(searchResults));
-saveResults=JSON.parse(localStorage.getItem("saveSearchResults"));
-console.log(saveResults);
-*/
- function loadData()
- {
+
+function loadData()
+{
     dataStrorage=localStorage.getItem('movieData');
     var data=JSON.parse(dataStrorage);
-  console.log(data);
-  var savedMovies;
-  savedMovies+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
-  savedMovies+='<section id="movies">';
+    var savedMovies;
+    savedMovies+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
+    savedMovies+='<section id="movies">';
    //Looping through the api data returned
-  for(var a=0; a<data.length;a++)
-      {
-       
-          //conditional to limit reults to only 9 
-          if(a<9)
+    for(var a=0; a<data.length;a++)
+    {          //conditional to limit reults to only 9 
+        if(a<9)
           {
-             console.log(dataStrorage);
-              savedMovies+='<article id="movieSearchResults">';
-              savedMovies+='<img src="https://image.tmdb.org/t/p/w500'+data[a]["poster_path"]+'" id="moviePoster" />';
-              savedMovies+='<span id="data"><h5 id="movieTitle">'+data[a]["title"]+'</h5>';
-              savedMovies+='<h6 id="movieYear">'+data[a]["release_date"]+'</h6></span>';
-             savedMovies+='</article>';
-
-          }
-             
-
-      }  
-savedMovies+='</section>';
-var loadMovies=document.getElementById('results');
-if(loadMovies)
-{
-    document.getElementById('results').innerHTML=savedMovies;
+            
+            savedMovies+='<article id="movieSearchResults">';
+            savedMovies+='<img src="https://image.tmdb.org/t/p/w500'+data[a]["poster_path"]+'" id="moviePoster" />';
+            savedMovies+='<span id="data"><h5 id="movieTitle">'+data[a]["title"]+'</h5>';
+            savedMovies+='<h6 id="movieYear">'+data[a]["release_date"]+'</h6></span>';
+            savedMovies+='</article>';
+        }
+    }  
+    savedMovies+='</section>';
+    var loadMovies=document.getElementById('results');
+    if(loadMovies)
+    {
+        document.getElementById('results').innerHTML=savedMovies;
+    }
 }
- }
-   //console.log(dataStrorage);   
 window.addEventListener('load', loadData,false);
+
+function mobileMenu()
+{
+
+    var tog=document.getElementById("mobileNav");
+  
+    console.log("click works")
+  
+}
+
+var menu=document.getElementById("hamburger");
+menu.addEventListener('click',mobileMenu, false);
