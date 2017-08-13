@@ -67,12 +67,13 @@ console.log(saveResults);
  function loadData()
  {
     dataStrorage=localStorage.getItem('movieData');
-  console.log(dataStrorage);
+    var data=JSON.parse(dataStrorage);
+  console.log(data);
   var savedMovies;
   savedMovies+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
   savedMovies+='<section id="movies">';
    //Looping through the api data returned
-  for(var a=0; a<dataStrorage.length;a++)
+  for(var a=0; a<data.length;a++)
       {
        
           //conditional to limit reults to only 9 
@@ -80,9 +81,9 @@ console.log(saveResults);
           {
              console.log(dataStrorage);
               savedMovies+='<article id="movieSearchResults">';
-              savedMovies+='<img src="https://image.tmdb.org/t/p/w500'+dataStrorage[a]["poster_path"]+'" id="moviePoster" />';
-              savedMovies+='<span id="data"><h5 id="movieTitle">'+dataStrorage[a]["title"]+'</h5>';
-              savedMovies+='<h6 id="movieYear">'+dataStrorage[a]["release_date"]+'</h6></span>';
+              savedMovies+='<img src="https://image.tmdb.org/t/p/w500'+data[a]["poster_path"]+'" id="moviePoster" />';
+              savedMovies+='<span id="data"><h5 id="movieTitle">'+data[a]["title"]+'</h5>';
+              savedMovies+='<h6 id="movieYear">'+data[a]["release_date"]+'</h6></span>';
              savedMovies+='</article>';
 
           }
