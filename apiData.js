@@ -7,6 +7,8 @@ var userInput;
 var newURL;
 var search=document.getElementById('searchButton');
  var movieResults; 
+ var dataStrorage;
+ var searchResults;
 function searchForMovies()
 {   
     userInput=document.querySelector('#movie').value; 
@@ -30,19 +32,29 @@ function searchForMovies()
                 movieResults+='<img src="https://image.tmdb.org/t/p/w500'+responseAsJson.results[i]["poster_path"]+'" id="moviePoster" />';
                 movieResults+='<span id="data"><h5 id="movieTitle">'+responseAsJson.results[i]["title"]+'</h5>';
                 movieResults+='<h6 id="movieYear">'+responseAsJson.results[i]["release_date"]+'</h6></span>';
-                movieResults+='</article>';
-            }         
-        }
+                movieResults+='</article>'; 
+                 
+            }
+               
+localStorage.setItem('movieData',JSON.stringify(responseAsJson.results));
+      
+        }  
   movieResults+='</section>';
-  var searchResults=document.getElementById('results');
+
+
+   
+  searchResults=document.getElementById('results');
   if(searchResults)
     {
         document.getElementById('results').innerHTML=movieResults;
-    }
+    } 
+
     })
     .catch(Error=>{
     console.log('error',Error);
     })
+ 
+   
 }
 //
 search.addEventListener('click',searchForMovies,false);
@@ -52,3 +64,37 @@ localStorage.setItem("saveSearchResults",JSON.stringify(searchResults));
 saveResults=JSON.parse(localStorage.getItem("saveSearchResults"));
 console.log(saveResults);
 */
+ function loadData()
+ {
+    dataStrorage=localStorage.getItem('movieData');
+  console.log(dataStrorage);
+  var savedMovies;
+  savedMovies+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
+  savedMovies+='<section id="movies">';
+   //Looping through the api data returned
+  for(var a=0; a<dataStrorage.length;a++)
+      {
+       
+          //conditional to limit reults to only 9 
+          if(a<9)
+          {
+             console.log(dataStrorage);
+              savedMovies+='<article id="movieSearchResults">';
+              savedMovies+='<img src="https://image.tmdb.org/t/p/w500'+dataStrorage[a]["poster_path"]+'" id="moviePoster" />';
+              savedMovies+='<span id="data"><h5 id="movieTitle">'+dataStrorage[a]["title"]+'</h5>';
+              savedMovies+='<h6 id="movieYear">'+dataStrorage[a]["release_date"]+'</h6></span>';
+             savedMovies+='</article>';
+
+          }
+             
+
+      }  
+savedMovies+='</section>';
+var loadMovies=document.getElementById('results');
+if(loadMovies)
+{
+    document.getElementById('results').innerHTML=savedMovies;
+}
+ }
+   //console.log(dataStrorage);   
+window.addEventListener('load', loadData,false);

@@ -12,27 +12,27 @@
     <div id="container">
     
     <header>
-        <img src="search-assets/movieicon.png" id="logo">
+        <img src="search-assets/movieicon.png" alt="icon" id="logo">
         <h1>MovieGo</h1>  
         <nav id=navigation> 
             
             <a id="homePage" href="index.html">Home</a>
             <a href='about.html' >About</a>
             <a href='connect.html' >Connect</a>
-            <button id="hamburger"><img src="../responsive-assets/hamburger.png"></button>
+            <button id="hamburger"><img src="../responsive-assets/hamburger.png" alt="mobileMenu"></button>
         </nav>
         <section id="searchInfo">
-             <h3>Search for your favorite movie</h3></br>
+             <h3>Search for your favorite movie</h3><br>
         <span class="inline-group">
-            <input type="text" id="movie"/> <button id="searchButton"><img src="search-assets/search.png" id="searchButton"></button>
+            <input type="text" id="movie"/> <button id="searchButton"><img src="search-assets/search.png" alt="search" id="searcIcon"></button>
         </span>                        
         </section>                
     </header>
 
     <section id="results">
-        <span id="resultsHeader">
-            <h1>Results for </p>
-        </span>
+        <div id="resultsHeader">
+            <p>Results for </p>
+        </div>
         <article id='searchResults'>
             <h4 id="movieTitle"></h4>
             <p id="movieYear"></p>
@@ -47,8 +47,9 @@
     </div>
     </footer>
     </div>
+    <script type= "text/javascript" src="apiData.js"></script> 
 </body>
 
-<script type= "text/javascript"src="apiData.js"></script> 
+
 
 </html>
