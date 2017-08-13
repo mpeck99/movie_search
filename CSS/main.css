@@ -77,8 +77,9 @@ header {
       width: 35%; } }
 
 #mogo img {
-  margin: 0px;
-  display: inline; }
+  margin-top: 10px;
+  margin-left: 10px;
+  display: inline-block; }
 
 #mogo p {
   font-family: 'Roboto', sans-serif;

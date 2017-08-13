@@ -117,10 +117,12 @@ header
         {
             display: flex;
             justify-content: center;
+
         }
         #movie input
         {
             width: 25%;
+
         }
         #movie button   
         {
@@ -132,8 +134,9 @@ header
 {
     
     
-        margin: 0px;
-        display: inline;   
+        margin-top: 10px;
+        margin-left: 10px;
+        display: inline-block;   
 }
 #mogo p
 {
@@ -172,6 +175,7 @@ header
 
 #navigation 
 { 
+    
     @include  mq(small)
     {
         a
