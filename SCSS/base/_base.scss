@@ -1,4 +1,5 @@
 @import 'layout/navigation';
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
 @mixin mq($screenSize)
 {
     @if $screenSize==small
@@ -127,13 +128,33 @@ header
         }
     }
 }
-
+#mogo img
+{
+    
+    
+        margin: 0px;
+        display: inline;   
+}
+#mogo p
+{
+    font-family: 'Roboto', sans-serif;
+    margin: 0px;
+    color: white;
+    font-size: 36px;
+    display: inline;
+    padding: 0px;
+}
 #resultsHeader 
 {
     @include backgroundColorRepeats;
     color: $neutral; 
     padding: 10px;
     display: inline;  
+    border-radius: $border;
+    @include mq(small)
+    {
+        width: 100%;
+    }
 }
 #hamburger
 {
@@ -143,6 +164,7 @@ header
         {
             width: 25px;
             height: 25px;
+            background: transparent;
         }
         
     }
@@ -177,10 +199,13 @@ header
     }
     a
     {
-    @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);   
+        @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);   
     }
-    @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row); 
-     
+        @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row); 
+    a:hover
+    {
+        color: $secondary-color;
+    }
 
  
 }
@@ -276,25 +301,29 @@ h5 ,h6
 
 }
 
-footer
+#footer
 {  
     @include backgroundColorRepeats;
-
+    color: $secondary-color;
 	width:100%;
-//	bottom:0;
-	left:0;
+    display: flex;
+    justify-content: center;
+
 }
 
-p{
+#footer h6
+{
+    color: $secondary-color;
     padding: 5px;
     margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
 }
 
-  #footerInfo
+  #footer p
 {
     text-decoration: none;
     display: flex;
-    width:5%;
     justify-content: center;
     color: $secondary-color;
     background-color: $primary-color;
@@ -307,7 +336,12 @@ p{
     font-weight: 900;
     margin: 10px auto;
     @include borderRadius;
-    @extend #footerInfo;
+    @extend #footer ;
+    text-decoration: none;
    // justify-content: center;
     
 }
+#moreButton:hover
+    {
+        color: white;
+    }

@@ -6,9 +6,11 @@ var url='https://api.themoviedb.org/3/search/movie?api_key=8c5361b08a74793d93e58
 var userInput;
 var newURL;
 var search=document.getElementById('searchButton');
- var movieResults; 
- var dataStrorage;
- var searchResults;
+var movieResults; 
+var dataStrorage;
+var savedMovies;
+var searchResults;
+
 function searchForMovies()
 {   
     userInput=document.querySelector('#movie').value; 
@@ -56,7 +58,7 @@ function loadData()
 {
     dataStrorage=localStorage.getItem('movieData');
     var data=JSON.parse(dataStrorage);
-    var savedMovies;
+    
     savedMovies+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
     savedMovies+='<section id="movies">';
    //Looping through the api data returned
