@@ -1,21 +1,5 @@
 @import 'layout/navigation';
 @import url('https://fonts.googleapis.com/css?family=Inconsolata');
-@mixin mq($screenSize)
-{
-    @if $screenSize==small
-    {
-        @media(min-width: 320px){@content;}
-    }
-    @else if $screenSize==medium
-    {
-        @media(min-width:600px){@content;}
-    }
-    @else if $screenSize==large
-    {
-        @media(min-width: 800px){@content;}
-    }
-}
-
 html, body
 {
     background-color: $neutral;
