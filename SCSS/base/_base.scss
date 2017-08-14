@@ -45,6 +45,7 @@ html, body
         color: $primary-color;
     }
 }
+
 #connectForm
 {
     @extend #aboutInformation;
@@ -75,19 +76,19 @@ header
     height: 20em;
     background-size: cover;  
     .inline-group
+    {
+        button
         {
-            button
-            {
-                height: 38px;
-                background: transparent;
-                border: none;
-            }
-            img
-            {
-                width: 75%;
-                height: 30px;
-            }
+            height: 38px;
+            background: transparent;
+            border: none;
         }
+        img
+        {
+            width: 75%;
+            height: 30px;
+        }
+    }
     @include mq(small)
     {
         background-image:  url('../search-assets/theatreImage.jpg');
@@ -99,7 +100,6 @@ header
         {
             margin: 0px;
         }
-
         #searchInfo h3
         {
             margin: 0px;
@@ -110,8 +110,9 @@ header
     {
         #searchInfo h3
         {
-            margin: 0px auto;
-        
+            margin-left: 27%;
+            margin-top: 10px;
+            
         }   
         .inline-group
         {
@@ -130,23 +131,57 @@ header
         }
     }
 }
+
 #mogo img
-{
+{    
+    margin-top: 10px;
+    margin-left: 10px;
+    display: inline-block;   
     
-    
-        margin-top: 10px;
-        margin-left: 10px;
-        display: inline-block;   
 }
+
+#mogo
+{
+    @include mq(small)
+    {
+        display: flex;
+        justify-content: center;
+    }
+    @include mq(large)
+    {
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
 #mogo p
 {
+
     font-family: 'Roboto', sans-serif;
     margin: 0px;
     color: white;
     font-size: 36px;
     display: inline;
     padding: 0px;
+    @include mq(small)
+    {
+        margin-top: 25px;
+        margin-bottom: 10px;
+        font-size: 24px;
+        display: flex;
+        justify-content: center;
+        margin-left: 10px;
+    }
+    @include mq(large)
+    {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 50px;
+        margin-left: 10px;
+    }
 }
+
+
 #resultsHeader 
 {
     @include backgroundColorRepeats;
@@ -154,11 +189,13 @@ header
     padding: 10px;
     display: inline;  
     border-radius: $border;
+    margin-left:10px;
     @include mq(small)
     {
         width: 100%;
     }
 }
+
 #hamburger
 {
     @include mq(small)
@@ -168,50 +205,72 @@ header
             width: 25px;
             height: 25px;
             background: transparent;
-        }
-        
+        }     
     }
 }
 
+.menuResponsive a
+{            
+    @include mq(small)
+    {
+        margin: 10px;    
+        width: 100%;
+        color: white;
+        border: $border;
+        clear: left;
+        visibility: visible;
+    }                                        
+}
+
+#movie input
+{
+   
+    width: 2%;
+    margin: 0px;
+    padding: 0px;
+}
+
 #navigation 
-{ 
-    
+{     
+    width: 5%;
+    float: right;
     @include  mq(small)
     {
-        a
+        ul
         {
             margin: 10px;
-            visibility: hidden;
+            visibility: hidden; 
         }
         #hamburger
         {
-            visibility: visible;
+           visibility: visible;
         }
-    }
+        
+    } 
     @include mq(large)
     {        
-       a
-        {
+       ul
+        {  
+            list-style: none;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
             visibility: visible;
         }
         #hamburger
         {
             visibility: hidden;
         }
-
-
     }
     a
     {
         @include navLayout(flex,$neutral,5px,flex-end,$font-stack-title,none, row);   
     }
-        @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row); 
+    @include navLayout(flex,$neutral,10px,flex-end,$font-stack-title,none, row); 
     a:hover
     {
         color: $secondary-color;
     }
-
- 
 }
 
 header img
@@ -224,7 +283,6 @@ header img
     {
         width: 100px;
     }
-   
 }
 
 h1
@@ -241,18 +299,13 @@ h3
     background-color: $primary-color;
     color: $neutral;
     width: 280px;
-
 }
        
-
-
 #searchButton button
 {
     width: 50px;
     height: 32px;
-  
 }
-
 
 #movie
 {
@@ -261,39 +314,32 @@ h3
     background-color: $neutral;
     margin: 0px;
     font-family: $font-stack-p;
-    font-size: 20px;
-
-        
+    font-size: 20px;       
 }
 
 #movieSearchResults
 {
-@include mq(small)
-    {
-        
-        #results
+    @include mq(small)
         {
-           width: 50%; 
-        }
+        
+            #results
+            {
+               width: 50%; 
+            }
    
-    }
+        }
     flex-direction: column;
     display: flex;
     margin: 10px 5px;
 }   
-
-   
   
 #movies
 {
     @include articleStyle;
     @extend %movieSearchResults;
-
     width: 55%;
     display: flex;
     flex-wrap: wrap;
- 
-
 }
 
 h5 ,h6
@@ -302,7 +348,6 @@ h5 ,h6
     margin: 0px;
     padding: 2px;
     height: 20px;
-
 }
 
 #footer
@@ -312,7 +357,6 @@ h5 ,h6
 	width:100%;
     display: flex;
     justify-content: center;
-
 }
 
 #footer h6
@@ -324,7 +368,7 @@ h5 ,h6
     justify-content: center;
 }
 
-  #footer p
+#footer p
 {
     text-decoration: none;
     display: flex;
@@ -342,10 +386,11 @@ h5 ,h6
     @include borderRadius;
     @extend #footer ;
     text-decoration: none;
-   // justify-content: center;
-    
+    display: flex;
+    justify-content: center;
 }
+
 #moreButton:hover
-    {
+{
         color: white;
-    }
+}

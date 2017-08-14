@@ -3,13 +3,13 @@
 //variables to hold the various inputs/urls needed to make the api call
 var apiSearch=new XMLHttpRequest();
 var url='https://api.themoviedb.org/3/search/movie?api_key=8c5361b08a74793d93e58ba2ab123299&query=';
-var userInput;
-var newURL;
+var userInput="";
+var newURL="";
 var search=document.getElementById('searchButton');
-var movieResults; 
-var dataStrorage;
-var savedMovies;
-var searchResults;
+var movieResults=""; 
+var dataStrorage="";
+var savedMovies="";
+var searchResults="";
 
 function searchForMovies()
 {   
@@ -36,13 +36,12 @@ function searchForMovies()
             movieResults+='</article>'; 
                  
         }   
+        //storing the search data so that I can repopulate the page whenever the browser is closed or reloaded
     localStorage.setItem('movieData',JSON.stringify(responseAsJson.results));     
     }  
     movieResults+='</section>';
-
-
-   
     searchResults=document.getElementById('results');
+    //setting the search results to replace the html article
     if(searchResults)
     {
         document.getElementById('results').innerHTML=movieResults;
@@ -53,20 +52,21 @@ function searchForMovies()
     })
 }
 search.addEventListener('click',searchForMovies,false);
-
+//loading the local storage data
 function loadData()
 {
     dataStrorage=localStorage.getItem('movieData');
+    //parsing so that I can loop through the data
     var data=JSON.parse(dataStrorage);
-    
     savedMovies+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
     savedMovies+='<section id="movies">';
    //Looping through the api data returned
     for(var a=0; a<data.length;a++)
-    {          //conditional to limit reults to only 9 
+
+    {
+        //conditional to limit reults to only 9 
         if(a<9)
           {
-            
             savedMovies+='<article id="movieSearchResults">';
             savedMovies+='<img src="https://image.tmdb.org/t/p/w500'+data[a]["poster_path"]+'" id="moviePoster" />';
             savedMovies+='<span id="data"><h5 id="movieTitle">'+data[a]["title"]+'</h5>';
@@ -82,15 +82,20 @@ function loadData()
     }
 }
 window.addEventListener('load', loadData,false);
-
-function mobileMenu()
+//setting up a function so that when the mobile hamburger is clicked
+//  I can open the ul to make the menu visible
+function mobile()
 {
 
-    var tog=document.getElementById("mobileNav");
-  
-    console.log("click works")
-  
+    var tog=document.getElementById("navigation");
+  if (tog.className === "menu")
+  {
+      tog.className += "Responsive";
+  }
+  else
+  {
+    tog.class+="menu";
+  }
 }
-
 var menu=document.getElementById("hamburger");
-menu.addEventListener('click',mobileMenu, false);
+menu.addEventListener('click',mobile, false);

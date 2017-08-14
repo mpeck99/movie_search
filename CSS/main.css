@@ -67,7 +67,8 @@ header {
         margin: 0px; } }
   @media (min-width: 800px) {
     header #searchInfo h3 {
-      margin: 0px auto; }
+      margin-left: 27%;
+      margin-top: 10px; }
     header .inline-group {
       display: flex;
       justify-content: center; }
@@ -81,6 +82,16 @@ header {
   margin-left: 10px;
   display: inline-block; }
 
+@media (min-width: 320px) {
+  #mogo {
+    display: flex;
+    justify-content: center; } }
+
+@media (min-width: 800px) {
+  #mogo {
+    display: flex;
+    justify-content: flex-start; } }
+
 #mogo p {
   font-family: 'Roboto', sans-serif;
   margin: 0px;
@@ -88,13 +99,28 @@ header {
   font-size: 36px;
   display: inline;
   padding: 0px; }
+  @media (min-width: 320px) {
+    #mogo p {
+      margin-top: 25px;
+      margin-bottom: 10px;
+      font-size: 24px;
+      display: flex;
+      justify-content: center;
+      margin-left: 10px; } }
+  @media (min-width: 800px) {
+    #mogo p {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 50px;
+      margin-left: 10px; } }
 
 #resultsHeader {
   background-color: #081c24;
   color: #E5E5E5;
   padding: 10px;
   display: inline;
-  border-radius: 10px; }
+  border-radius: 10px;
+  margin-left: 10px; }
   @media (min-width: 320px) {
     #resultsHeader {
       width: 100%; } }
@@ -105,7 +131,23 @@ header {
     height: 25px;
     background: transparent; } }
 
+@media (min-width: 320px) {
+  .menuResponsive a {
+    margin: 10px;
+    width: 100%;
+    color: white;
+    border: 10px;
+    clear: left;
+    visibility: visible; } }
+
+#movie input {
+  width: 2%;
+  margin: 0px;
+  padding: 0px; }
+
 #navigation {
+  width: 5%;
+  float: right;
   color: #E5E5E5;
   display: flex;
   margin: 10px;
@@ -114,13 +156,17 @@ header {
   text-decoration: none;
   flex-direction: row; }
   @media (min-width: 320px) {
-    #navigation a {
+    #navigation ul {
       margin: 10px;
       visibility: hidden; }
     #navigation #hamburger {
       visibility: visible; } }
   @media (min-width: 800px) {
-    #navigation a {
+    #navigation ul {
+      list-style: none;
+      text-decoration: none;
+      display: flex;
+      flex-direction: row;
       visibility: visible; }
     #navigation #hamburger {
       visibility: hidden; } }
@@ -219,7 +265,9 @@ h5, h6 {
   border-radius: 10px;
   border-style: none;
   padding: 1em;
-  text-decoration: none; }
+  text-decoration: none;
+  display: flex;
+  justify-content: center; }
 
 #moreButton:hover {
   color: white; }

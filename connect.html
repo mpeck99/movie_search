@@ -5,18 +5,19 @@
         <meta charset="utf-8">
         <link rel=stylesheet href='CSS/main.css'/>        
     </head>
-
     <body>  
         <div id="container">
         <header>
             <img src="search-assets/movieicon.png" id="logo">
             <h1>MovieGo</h1>
             <nav id=navigation class="menu"> 
-                    <a id="homePage" href="index.html">Home</a>
-                    <a href='about.html' >About</a>
-                    <a href='connect.html' >Connect</a>
-                    <a id="hamburger"><img src="../responsive-assets/hamburger.png" alt="mobileMenu"></a>
-                </nav>                
+                    <ul class="mobileNav">
+                    <li><a id="homePage" href="index.html">Home</a></li>
+                    <li><a href='about.html' >About</a></li>
+                    <li><a href='connect.html' >Connect</a></li>
+                    </ul>
+                    <a id="hamburger"><img src="../responsive-assets/hamburger.png" alt="mobile"></a>
+                </nav>               
         </header>   
         <section id="connectForm">
             <h1>Connect with us at MovieGo</h1>
@@ -26,7 +27,8 @@
                 Gender: <input type="radio" name="gender" value="male" checked>Male
                 <input type="radio" name="gender" value="female">Female<br>
                 <textarea name="message" rows="10" cols="30">
-                </textarea>
+                </textarea><br>
+                <button id="submit">Submit</button>
             </form>
         </section>
         <footer id="footer">
@@ -37,5 +39,4 @@
         </footer>
     </div>
     </body>
-
 </html>
