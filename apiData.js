@@ -22,7 +22,7 @@ function searchForMovies()
     {
 //Variables to hold results
      
-    movieResults+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
+    movieResults+='<h2 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h2>';   
     movieResults+='<section id="movies">';
      //Looping through the api data returned
     for(var i=0; i<responseAsJson.results.length;i++)

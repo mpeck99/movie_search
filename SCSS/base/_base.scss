@@ -128,23 +128,21 @@ header
 {
     @include mq(small)
     {
-        display: flex;
+
         justify-content: center;
     }
     @include mq(large)
     {
-        display: flex;
+        
         justify-content: flex-start;
     }
 }
-#mogo p
+#mogo h1
 {
-
     font-family: 'Roboto', sans-serif;
     margin: 0px;
     color: white;
     font-size: 36px;
-    display: inline;
     padding: 0px;
     @include mq(small)
     {
@@ -157,9 +155,8 @@ header
     }
     @include mq(large)
     {
-        display: flex;
+        display: inline-flex;
         justify-content: flex-start;
-        margin-top: 50px;
         margin-left: 10px;
     }
 }
@@ -168,14 +165,16 @@ header
 #resultsHeader 
 {
     @include backgroundColorRepeats;
+    background-color: $primary-color;
     color: $neutral; 
-    padding: 10px;
-    display: inline;  
+    padding: 10px;  
     border-radius: $border;
     margin-left:10px;
     @include mq(small)
     {
-        width: 100%;
+        width: 10%;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -282,8 +281,9 @@ h3
     background-color: $primary-color;
     color: $neutral;
     width: 280px;
+    
 }
-       
+   
 #searchButton button
 {
     width: 50px;
