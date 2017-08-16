@@ -37,7 +37,15 @@ html, body
     h1
     {
         color: $secondary-color;
+        width: 100%;
        
+    }
+    form
+    {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+
     }
 }
 
@@ -75,19 +83,12 @@ header
     }
     @include mq(small)
     {
-        background-image:  url('../search-assets/theatreImage.jpg');
         margin-bottom: 15px;
         width: 100%;
         height:15em;
-        background-size: cover;
         h3
         {
             margin: 0px;
-        }
-        #searchInfo h3
-        {
-            margin: 0px;
-    
         }
     }
     @include mq(large)
@@ -165,16 +166,14 @@ header
 #resultsHeader 
 {
     @include backgroundColorRepeats;
-    background-color: $primary-color;
     color: $neutral; 
-    padding: 10px;  
+    padding: 10px;
+    display: inline;  
     border-radius: $border;
-    margin-left:10px;
+
     @include mq(small)
     {
-        width: 10%;
-        display: flex;
-        justify-content: center;
+        width: 100%;
     }
 }
 
@@ -283,12 +282,7 @@ h3
     width: 280px;
     
 }
-   
-#searchButton button
-{
-    width: 50px;
-    height: 32px;
-}
+
 
 #movie
 {
@@ -299,21 +293,25 @@ h3
     font-family: $font-stack-p;
     font-size: 20px;       
 }
-
+#results
+{   flex-direction: column;
+    display: flex;
+    margin: 10px 5px;
+    width: 100%; 
+    #movieData
+    {
+        margin-bottom: 10px;
+    }
+}
 #movieSearchResults
 {
     @include mq(small)
         {
         
-            #results
-            {
-               width: 50%; 
-            }
+            
    
         }
-    flex-direction: column;
-    display: flex;
-    margin: 10px 5px;
+    
 }   
   
 #movies

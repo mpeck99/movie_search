@@ -22,26 +22,28 @@ function searchForMovies()
     {
 //Variables to hold results
      
-    movieResults+='<h2 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h2>';   
+    
     movieResults+='<section id="movies">';
-     //Looping through the api data returned
+    movieResults+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>'; 
+//Looping through the api data returned
     for(var i=0; i<responseAsJson.results.length;i++)
-    {        //conditional to limit reults to only 9 
+    {        
+//conditional to limit reults to only 9 
         if(i<9)
         {
-            movieResults+='<article id="movieSearchResults">';
+            movieResults+='<article id="searchResults">';
             movieResults+='<img src="https://image.tmdb.org/t/p/w500'+responseAsJson.results[i]["poster_path"]+'" id="moviePoster" />';
             movieResults+='<span id="data"><h5 id="movieTitle">'+responseAsJson.results[i]["title"]+'</h5>';
             movieResults+='<h6 id="movieYear">'+responseAsJson.results[i]["release_date"]+'</h6></span>';
             movieResults+='</article>'; 
                  
         }   
-        //storing the search data so that I can repopulate the page whenever the browser is closed or reloaded
+//storing the search data so that I can repopulate the page whenever the browser is closed or reloaded
     localStorage.setItem('movieData',JSON.stringify(responseAsJson.results));     
     }  
     movieResults+='</section>';
     searchResults=document.getElementById('results');
-    //setting the search results to replace the html article
+//setting the search results to replace the html article
     if(searchResults)
     {
         document.getElementById('results').innerHTML=movieResults;
@@ -56,15 +58,15 @@ search.addEventListener('click',searchForMovies,false);
 function loadData()
 {
     dataStrorage=localStorage.getItem('movieData');
-    //parsing so that I can loop through the data
+//parsing so that I can loop through the data
     var data=JSON.parse(dataStrorage);
     savedMovies+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
     savedMovies+='<section id="movies">';
-   //Looping through the api data returned
+//Looping through the api data returned
     for(var a=0; a<data.length;a++)
 
     {
-        //conditional to limit reults to only 9 
+//conditional to limit reults to only 9 
         if(a<9)
           {
             savedMovies+='<article id="movieSearchResults">';
