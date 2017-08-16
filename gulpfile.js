@@ -14,7 +14,7 @@ return gulp.src('./SCSS/*.scss')
 })
 gulp.task('browser-sync',function(){
   browserSync.init({
-    //browser: 'google chrome',
+    browser: 'google chrome',
   server: {
     baseDir:"./"
     

@@ -9,7 +9,9 @@ var search=document.getElementById('searchButton');
 var movieResults=""; 
 var dataStrorage="";
 var savedMovies="";
-var searchResults="";
+var searchResults=""; 
+
+
 
 function searchForMovies()
 {   
@@ -21,8 +23,6 @@ function searchForMovies()
     .then(responseAsJson=>
     {
 //Variables to hold results
-     
-    
     movieResults+='<section id="movies">';
     movieResults+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>'; 
 //Looping through the api data returned
@@ -36,7 +36,7 @@ function searchForMovies()
             movieResults+='<span id="data"><h5 id="movieTitle">'+responseAsJson.results[i]["title"]+'</h5>';
             movieResults+='<h6 id="movieYear">'+responseAsJson.results[i]["release_date"]+'</h6></span>';
             movieResults+='</article>'; 
-                 
+            
         }   
 //storing the search data so that I can repopulate the page whenever the browser is closed or reloaded
     localStorage.setItem('movieData',JSON.stringify(responseAsJson.results));     
@@ -59,13 +59,11 @@ function loadData()
 {
     dataStrorage=localStorage.getItem('movieData');
 //parsing so that I can loop through the data
-    var data=JSON.parse(dataStrorage);
+    var data=JSON.parse(dataStrorage);  
     savedMovies+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
     savedMovies+='<section id="movies">';
 //Looping through the api data returned
-
     for(var a=0; a<data.length;a++)
-
     {
 //conditional to limit reults to only 9 
         if(a<9)
@@ -85,7 +83,10 @@ function loadData()
     }
 }
 
-window.addEventListener('load', loadData,false);
+  window.addEventListener('load', loadData,false);  
+
+
+
 //setting up a function so that when the mobile hamburger is clicked
 //  I can open the ul to make the menu visible
 function mobile()
