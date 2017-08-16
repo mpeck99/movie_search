@@ -63,7 +63,8 @@ function loadData()
     savedMovies+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
     savedMovies+='<section id="movies">';
 //Looping through the api data returned
-if(localStorage.getItem('data')){
+if(localStorage.getItem('data')!=null)
+{
     for(var a=0; a<data.length;a++)
 
     {
