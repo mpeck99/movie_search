@@ -63,6 +63,7 @@ function loadData()
     savedMovies+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>';   
     savedMovies+='<section id="movies">';
 //Looping through the api data returned
+if(localStorage.getItem('data')){
     for(var a=0; a<data.length;a++)
 
     {
@@ -83,6 +84,12 @@ function loadData()
         document.getElementById('results').innerHTML=savedMovies;
     }
 }
+else
+{
+    
+}
+}
+
 window.addEventListener('load', loadData,false);
 //setting up a function so that when the mobile hamburger is clicked
 //  I can open the ul to make the menu visible
