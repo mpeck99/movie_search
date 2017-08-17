@@ -5,17 +5,15 @@ var apiSearch=new XMLHttpRequest();
 var url='https://api.themoviedb.org/3/search/movie?api_key=8c5361b08a74793d93e58ba2ab123299&query=';
 var userInput="";
 var newURL="";
-var search=document.getElementById('searchButton');
+var search=document.getElementById('searchIcon');
 var movieResults=""; 
 var dataStrorage="";
 var savedMovies="";
 var searchResults=""; 
 
-
-
 function searchForMovies()
 {   
-    userInput=document.querySelector('#movie').value; 
+    userInput=document.querySelector('#userInput').value; 
     newURL=url+userInput+"&page=1&include_adult=false";
 //Loading the json data from The Movie Database
     fetch(newURL)
@@ -24,25 +22,26 @@ function searchForMovies()
     {
 //Variables to hold results
     movieResults+='<section id="movies">';
-    movieResults+='<h1 id="resultsHeader">Results for '+document.querySelector('#movie').value+'</h1>'; 
+    movieResults+='<h1 id="resultsHeader">Results for '+document.querySelector('#userInput').value+'</h1>'; 
 //Looping through the api data returned
     for(var i=0; i<responseAsJson.results.length;i++)
     {        
 //conditional to limit reults to only 9 
         if(i<9)
         {
-            movieResults+='<article id="searchResults">';
-            movieResults+='<img src="https://image.tmdb.org/t/p/w500'+responseAsJson.results[i]["poster_path"]+'" id="moviePoster" />';
+            movieResults+='<article id="searchResults"><br>';
+            movieResults+='<img src="https://image.tmdb.org/t/p/w500'+responseAsJson.results[i]["poster_path"]+'" id="moviePoster" alt="poster" />';
             movieResults+='<span id="data"><h5 id="movieTitle">'+responseAsJson.results[i]["title"]+'</h5>';
             movieResults+='<h6 id="movieYear">'+responseAsJson.results[i]["release_date"]+'</h6></span>';
             movieResults+='</article>'; 
-            
+           localStorage.setItem('movieData',JSON.stringify(responseAsJson.results));   
         }   
 //storing the search data so that I can repopulate the page whenever the browser is closed or reloaded
-    localStorage.setItem('movieData',JSON.stringify(responseAsJson.results));     
+       
     }  
     movieResults+='</section>';
     searchResults=document.getElementById('results');
+    
 //setting the search results to replace the html article
     if(searchResults)
     {

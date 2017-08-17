@@ -39,13 +39,33 @@ html, body {
   display: flex;
   flex-direction: column; }
 
+#userInput {
+  width: 500px;
+  height: 30px; }
+  @media (max-width: 425px) {
+    #userInput {
+      width: 250px; } }
+
+#searchIcon {
+  vertical-align: top;
+  width: 40px;
+  height: 35px; }
+  @media (max-width: 425px) {
+    #searchIcon {
+      width: 30px;
+      height: 30px; } }
+
 #container {
   min-height: 100%;
   width: 100%; }
-  @media (min-width: 320px) {
+  @media (max-width: 425px) {
     #container {
       min-height: 100%;
       width: 100%; } }
+
+.inline-group {
+  display: flex;
+  justify-content: center; }
 
 header {
   background-image: url("../search-assets/theatreImage.jpg");
@@ -53,42 +73,34 @@ header {
   width: 100%;
   height: 20em;
   background-size: cover; }
-  header .inline-group button {
-    height: 38px;
-    background: transparent;
-    border: none; }
-  header .inline-group img {
-    width: 75%;
-    height: 30px; }
-  @media (min-width: 320px) {
+  @media (max-width: 425px) {
     header {
-      margin-bottom: 15px;
       width: 100%;
+      margin-bottom: 15px;
       height: 15em; }
-      header h3 {
-        margin: 0px; } }
-  @media (min-width: 800px) {
-    header #searchInfo h3 {
-      margin-left: 27%;
-      margin-top: 10px; }
+      header #movie {
+        width: 1px; } }
+  @media (max-width: 800px) {
     header .inline-group {
       display: flex;
-      justify-content: center; }
-    header #movie input {
-      width: 25%; }
-    header #movie button {
-      width: 35%; } }
+      justify-content: center; } }
+
+#searchInfo h3 {
+  margin-left: 27%;
+  margin-top: 10px;
+  width: 10px;
+  height: 10px; }
 
 #mogo img {
   margin-top: 10px;
   margin-left: 10px;
   display: inline-block; }
 
-@media (min-width: 320px) {
+@media (max-width: 425px) {
   #mogo {
     justify-content: center; } }
 
-@media (min-width: 800px) {
+@media (max-width: 800px) {
   #mogo {
     justify-content: flex-start; } }
 
@@ -98,7 +110,7 @@ header {
   color: white;
   font-size: 36px;
   padding: 0px; }
-  @media (min-width: 320px) {
+  @media (max-width: 425px) {
     #mogo h1 {
       margin-top: 25px;
       margin-bottom: 10px;
@@ -106,7 +118,7 @@ header {
       display: flex;
       justify-content: center;
       margin-left: 10px; } }
-  @media (min-width: 800px) {
+  @media (max-width: 800px) {
     #mogo h1 {
       display: inline-flex;
       justify-content: flex-start;
@@ -116,19 +128,21 @@ header {
   background-color: #081c24;
   color: #E5E5E5;
   padding: 10px;
-  display: inline;
+  width: 100%;
   border-radius: 10px; }
-  @media (min-width: 320px) {
+  @media (max-width: 425px) {
     #resultsHeader {
-      width: 100%; } }
+      margin: 10px;
+      margin-left: 0px;
+      margin-right: 0px; } }
 
-@media (min-width: 320px) {
+@media (max-width: 425px) {
   #hamburger img {
     width: 25px;
     height: 25px;
     background: transparent; } }
 
-@media (min-width: 320px) {
+@media (max-width: 425px) {
   .menuResponsive a {
     margin: 10px;
     width: 100%;
@@ -137,36 +151,49 @@ header {
     clear: left;
     visibility: visible; } }
 
-#movie input {
-  width: 2%;
-  margin: 0px;
-  padding: 0px; }
-
 #navigation {
   width: 5%;
   float: right;
+  /* @include mq(large)
+    {        
+       ul
+        {  
+            list-style: none;
+            text-decoration: none;
+            display: flex;
+            flex-direction: row;
+            visibility: visible;
+        }
+        #hamburger
+        {
+            visibility: hidden;
+        }
+    }*/
   color: #E5E5E5;
   display: flex;
-  margin: 10px;
+  margin: 5px;
   justify-content: flex-end;
   font-family: "PT Sands", sans-serif;
   text-decoration: none;
   flex-direction: row; }
-  @media (min-width: 320px) {
+  #navigation ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none; }
+  #navigation #hamburger {
+    width: 25px;
+    height: 50px;
+    visibility: hidden; }
+  @media (max-width: 425px) {
     #navigation ul {
-      margin: 10px;
       visibility: hidden; }
     #navigation #hamburger {
       visibility: visible; } }
-  @media (min-width: 800px) {
+  @media (max-width: 768px) {
     #navigation ul {
-      list-style: none;
-      text-decoration: none;
-      display: flex;
-      flex-direction: row;
-      visibility: visible; }
+      visibility: hidden; }
     #navigation #hamburger {
-      visibility: hidden; } }
+      visibility: visible; } }
   #navigation a {
     color: #E5E5E5;
     display: flex;
@@ -178,25 +205,36 @@ header {
   #navigation a:hover {
     color: #01d277; }
 
-@media (min-width: 320px) {
-  header img {
-    width: 50px; } }
-
-@media (min-width: 800px) {
-  header img {
-    width: 100px; } }
+header img {
+  width: 100px; }
+  @media (max-width: 425px) {
+    header img {
+      width: 20px; } }
+  @media (max-width: 768px) {
+    header img {
+      width: 75px; } }
 
 h1 {
   font-family: "PT Sands", sans-serif;
   color: #E5E5E5;
   display: inline; }
 
-h3 {
-  margin-left: 570px;
+#searchInfo h3 {
+  display: flex;
+  justify-content: center;
   margin-bottom: 0px;
   background-color: #081c24;
   color: #E5E5E5;
-  width: 280px; }
+  width: 18%;
+  height: 20%;
+  padding: 5px;
+  border-radius: 10px; }
+  @media (max-width: 425px) {
+    #searchInfo h3 {
+      font-size: 14px;
+      height: 10%;
+      width: 55%;
+      align-items: flex-start; } }
 
 #movie {
   margin: 0px auto;
@@ -209,10 +247,30 @@ h3 {
 #results {
   flex-direction: column;
   display: flex;
-  margin: 10px 5px;
-  width: 100%; }
-  #results #movieData {
-    margin-bottom: 10px; }
+  margin: 10px 5px; }
+  @media (max-width: 425px) {
+    #results {
+      margin-bottom: 5px;
+      flex-direction: row; }
+      #results #moviePoster {
+        float: left;
+        margin: 0px;
+        width: 60%;
+        height: 70%; }
+      #results #data {
+        float: right;
+        width: 40%; } }
+  @media (max-width: 768px) {
+    #results {
+      display: inline-flex; } }
+
+#data {
+  height: 100px;
+  margin-bottom: 10px; }
+
+#results h1 {
+  height: 20px;
+  display: block; }
 
 #movies {
   width: 55%;

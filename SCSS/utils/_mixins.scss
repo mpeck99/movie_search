@@ -28,15 +28,15 @@
 {
     @if $screenSize==small
     {
-        @media(min-width: 320px){@content;}
+        @media(max-width: 425px){@content;}
     }
     @else if $screenSize==medium
     {
-        @media(min-width:600px){@content;}
+        @media(max-width:768px){@content;}
     }
     @else if $screenSize==large
     {
-        @media(min-width: 800px){@content;}
+        @media(max-width: 800px){@content;}
     }
 }
 
